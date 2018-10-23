@@ -1,0 +1,156 @@
+﻿@model  Enjoygame.DOMAİN.Core.Urun
+
+@{
+    ViewBag.Title = "GameDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="content">
+    <div class="container">
+        <div id="hot">
+            <div class="box">
+                <div class="container">
+                    <div class="col-md-12">
+                        <h2 class="bounce">@Model.urunAd</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <!-- *** MENUS AND FILTEsRS ***
+            _________________________________________________________ -->
+            <div class="panel panel-default sidebar-menu">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">Kategoriler</h3>
+                </div>
+
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked category-menu">
+                        <li>
+                            <ul>
+                                <li>
+                                    <a href="~/Catagorys/Index/2">Aksiyon <span class="badge pull-right"></span></a>
+                                </li>
+                                <li>
+                                    <a href="~/Catagorys/Index/3">Macera</a>
+                                </li>
+                                <li>
+                                    <a href="~/Catagorys/Index/4">RYO</a>
+                                </li>
+                                <li>
+                                    <a href="~/Catagorys/Index/5">Simülasyon</a>
+                                </li>
+
+                                <li>
+                                    <a href="~/Catagorys/Index/6">Spor</a>
+                                </li>
+                                <li>
+                                    <a href="~/Catagorys/Index/7">Strateji</a>
+                                </li>
+                                <li>
+                                    <a href="~/Catagorys/Index/8">Yarış</a>
+                                </li>
+                                <li>
+                                    <a href="~/Catagorys/Index/9">FPS</a>
+                                </li>
+
+                                <li>
+                                    <a href="~/Catagorys/Index/10">Korku</a>
+                                </li>
+                                <li>
+                                    <a href="~/Catagorys/Index/11">Açık Dünya </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+
+            <!-- *** MENUS AND FILTERS END *** -->
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row" id="productMain">
+                <div class="col-sm-6">
+                    <div id="mainImage">
+                        <img src="img/detailbig2.jpg" alt="" class="img-responsive">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="box">
+                        <h3 class="text-center">@Model.urunAd</h3>
+                        <p class="goToDescription">
+                            <a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a>
+                        </p>
+                        <p class="price">@Model.urunFiyat</p>
+
+                        <p class="text-center buttons">
+                            <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                            <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
+                        </p>
+
+
+                    </div>
+
+                    <div class="row" id="thumbs">
+                        <div class="col-xs-4">
+                            <a href="@Model.urunResimYolu1" class="thumb">
+                                <img src="@Model.urunResimYolu1" alt="" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="@Model.urunResimYolu2" class="thumb active">
+                                <img src="@Model.urunResimYolu2" alt="" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="@Model.urunResimYolu1" class="thumb">
+                                <img src="@Model.urunResimYolu1" alt="" class="img-responsive">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box" id="details">
+                <p>
+                </p>
+                <h4>Product details</h4>
+                <p>@Html.Raw(@Model.urunBilgisi)</p>
+
+                <blockquote>
+
+                    <em> Önemli : @Html.Raw(@Model.AltBilgisi)</em>
+                </blockquote>
+
+                <hr>
+                <div class="social">
+                    <h4>Show it to your friends</h4>
+                    <p>
+                        <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="box">
+                        @Html.Action("RandomGame", "Home")
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- /.col-md-9 -->
+</div>

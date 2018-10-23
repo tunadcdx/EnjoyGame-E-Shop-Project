@@ -1,0 +1,48 @@
+﻿@model Enjoygame.PL.Models.Login
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="Login">Giriş</h4>
+                </div>
+                <div class="modal-body">
+                          
+                    <table>
+                        <tbody class="form-group">
+                            <tr>
+                                <td > @Html.LabelFor(m => m.Username) </td>
+                                <td style="margin:1px 1px 1px 1px" >
+                                    @Html.TextBoxFor(m => m.Username)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td > @Html.LabelFor(m => m.Password) </td>
+                                <td> @Html.PasswordFor(m => m.Password) </td>
+                            </tr>
+                            <tr>
+                                <td > @Html.LabelFor(m => m.RememberMe) </td>
+                                <td> @Html.CheckBoxFor(m => m.RememberMe) </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="submit" value="Giriş" class="btn btn-primary"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="text-center text-muted">Üye Degil misiniz?</p>
+                    <p class="text-center text-muted"><a href="~/Account/Register"><strong>Kayıt OL</strong></a>Üye Olmak İçin Tıklanıyınız </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

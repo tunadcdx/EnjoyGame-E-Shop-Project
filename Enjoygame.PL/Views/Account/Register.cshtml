@@ -1,0 +1,74 @@
+﻿@model Enjoygame.DOMAİN.Core.Kullanici
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="text text-center">Kayıt Ol</h2>
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tbody>
+            <tr>
+                <td style="width: 140px;"> @Html.LabelFor(m => m.Name) </td>
+                <td> @Html.TextBoxFor(m => m.Name) </td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(m => m.Surname) </td>
+                <td> @Html.TextBoxFor(m => m.Surname) </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.Username) </td>
+                <td> @Html.TextBoxFor(m => m.Username) </td>
+            </tr>
+
+            <tr>
+                <td> @Html.LabelFor(m => m.Email) </td>
+                <td> @Html.TextBoxFor(m => m.Email) </td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(m => m.Password) </td>
+                <td> @Html.PasswordFor(m => m.Password) </td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(m => m.ConfirmPassword) </td>
+                <td> @Html.PasswordFor(m => m.ConfirmPassword) </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Kaydol" class="btn btn-default">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+<@*h2>Üye Giriş</h2>
+
+        @Html.ValidationSummary()
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <table>
+            <tbody><tr>
+            <td style = "width: 140px;" > @Html.LabelFor(m => m.Username) </td>
+            <td> @Html.TextBoxFor(m => m.Username) </td>
+            </tr>
+            <tr>
+            <td> @Html.LabelFor(m => m.Password) </td>
+            <td> @Html.PasswordFor(m => m.Password) </td>
+            </tr>
+            <tr>
+            <td> @Html.LabelFor(m => m.RememberMe) </td>
+            <td> @Html.CheckBoxFor(m => m.RememberMe) </td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><input type = "submit" value = "Giriş" class="btn btn-default"></td>
+            </tr>
+            </tbody>
+            </table>
+        }*@

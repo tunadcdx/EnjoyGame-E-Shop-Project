@@ -1,0 +1,55 @@
+﻿@model List<Enjoygame.DOMAİN.Core.Urun>
+
+<div class="container ">
+    <div class="row box">
+        <div id="hot">
+            <div class="box">
+                <div class="container">
+                    <div class="col-md-12">
+                        <h3 class="text-center">Yeni Çıkan</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @foreach (var i in Model)
+            {
+            <div class="col-md-3 col-sm-6 ">
+                <div class="product box">
+                    <div class="flip-container ">
+                        <div class="flipper">
+                            <div class="front">
+                                <a href="/Home/GameDetails/@i.ID">
+                                    <img src="@i.urunKapakResim" alt="@i.urunBilgisi" class="img-responsive">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h3>@i.urunAd</h3>
+                        <p class="price">@i.urunFiyat</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /.product -->
+        }
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script type="text/javascript">
+    function BasketAdd(id, adet) {
+        $.ajax({
+            type: "GET",
+            url: "/Basket/BasketAdd",
+            data: { ID: id, Adet: adet },
+            success: function (sonuc) {
+                $('#basket').html(sonuc);
+            },
+            error: function () {
+                alert: ('hata');
+            }
+        });
+    }
+</script>

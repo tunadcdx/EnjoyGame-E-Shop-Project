@@ -1,0 +1,10 @@
+﻿@model List<Enjoygame.DOMAİN.Core.Urun>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Action("NewGames", "Home", new { urunid = @ViewBag.urunid })
+@Html.Action("Midgame", "Home");
+

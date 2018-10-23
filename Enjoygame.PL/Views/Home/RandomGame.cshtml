@@ -1,0 +1,27 @@
+﻿@model List<Enjoygame.DOMAİN.Core.Urun>
+
+<div class="container">
+    <div class="row">
+        @foreach (var i in Model)
+            {
+            <div class="col-md-3 col-sm-6">
+                <div class="product">
+                    <div class="flip-container">
+                        <div class="flipper">
+                            <div class="front">
+                                <a href="/Home/GameDetails/@i.ID">
+                                    <img src="@i.urunKapakResim" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h3>@i.urunAd</h3>
+                        <p class="price">@i.urunFiyat</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /.product -->
+        }
+    </div>
+</div>

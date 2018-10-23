@@ -1,0 +1,313 @@
+﻿<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Obaju e-commerce template">
+    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
+    <meta name="keywords" content="">
+
+    <title>
+        Enjoy Game
+    </title>
+
+    <meta name="keywords" content="">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+
+    <!-- styles -->
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/css/owl.carousel.css" rel="stylesheet">
+    <link href="~/Content/css/owl.theme.css" rel="stylesheet">
+
+    <!-- theme stylesheet -->
+    <link href="~/Content/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+
+    <!-- your stylesheet with modifications -->
+    <link href="~/Content/css/custom.css" rel="stylesheet">
+
+    <script src="~/Scripts/respond.min.js"></script>
+
+    <link rel="shortcut icon" href="favicon.png">
+
+
+    <style type="text/css">
+        .bounce {
+            -webkit-animation-name: bounce;
+            animation-name: bounce;
+            -webkit-transform-origin: center bottom;
+            transform-origin: center bottom;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- *** TOPBAR ***
+    _________________________________________________________  -->
+    <div id="top">
+        <div class="container">
+            <div class="col-md-6 offer" data-animate="fadeInDown">
+                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">İNDİRİM</a>  <a href="#">Haftalık İndirimler</a>
+            </div>
+            <div id="login" class="col-md-6" data-animate="fadeInDown">
+                <ul class="menu">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Giriş</a>
+                    </li>
+                    <li>
+                        <a href="~/Account/Register">Kayıt Ol</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        @Html.Action("Login", "Account")
+    </div>
+
+    <!-- *** TOP BAR END *** -->
+    <!-- *** NAVBAR ***
+    _________________________________________________________ -->
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+
+                <a class="navbar-brand home" href="~/Home/Index" data-animate-hover="bounce">
+                    <img src="~/Content/Image/logo.png" alt="enjoy game logo" class="hidden-xs">
+                    <img src="~/Content/Image/logo-small.png" alt="enjoy game logo" class="visible-xs"><span class="sr-only">Ana Sayfa</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
+                        <span class="sr-only">Toggle search</span>
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <a class="btn btn-default navbar-toggle" href="Sepet/Detay">
+                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">
+                            Sepet (@if (Session["toplamadet"] != null)
+                            {@Session["toplamadet"].ToString();
+                            })
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!--/.navbar-header -->
+
+
+            <div class="navbar-collapse collapse" id="navigation">
+
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active">
+                        <a href="Index">Ana Sayfa</a>
+                    </li>
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Oyunlar <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5>Kategoriler</h5>
+                                            <ul>
+                                                <li>
+                                                    <a href="~/Catagorys/Index/2">Aksiyon</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Catagorys/Index/3">Macera</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Catagorys/Index/4">RYO</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Catagorys/Index/5">Simülasyon</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>&emsp; </h5>
+                                            <ul>
+                                                <li>
+                                                    <a href="~/Catagorys/Index/6">Spor</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Catagorys/Index/7">Strateji</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Catagorys/Index/8">Yarış</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Catagorys/Index/9">FPS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>&emsp; </h5>
+                                            <ul>
+                                                <li>
+                                                    <a href="~/Catagorys/Index/10">Korku</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Catagorys/Index/11">Açık Dünya </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- /.yamm-content -->
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <!--/.nav-collapse -->
+
+            <div class="navbar-buttons">
+
+                <div class="navbar-collapse collapse right" id="basket-overview">
+                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">Sepet () </span></a>
+                </div>
+                <!--/.nav-collapse -->
+
+                <div class="navbar-collapse collapse right" id="search-not-mobile">
+                    <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
+                        <span class="sr-only">Toggle search</span>
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+
+                        </span>
+                    </div>
+                </form>
+
+            </div>
+            <!--/.nav-collapse -->
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /#navbar -->
+    <!-- *** NAVBAR END *** -->
+
+
+    <div id="all">
+        @RenderBody()
+    </div>
+    <!-- *** BLOG HOMEPAGE END *** -->
+    <!-- /#content -->
+    <!-- *** FOOTER ***
+    _________________________________________________________ -->
+    <div id="footer" data-animate="fadeInUp">
+        <div class="container">
+            <div class="row fa-align-justify ">
+                <div class="col-6 col-md-4">
+                    <h4> Biz Kim miyiz ? </h4>
+                    <ul>
+                        <li>
+                            <a href="Home/About">Hakkımızda</a>
+                        </li>
+
+                        <li>
+                            <a href="faq.html">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="Home/contact">iletişim</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Alışveriş'e Başla </h4>
+
+                    <ul>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#login-modal">Giriş Yap</a>
+                        </li>
+                        <li>
+                            <a href="Home/register">Kayıt Ol</a>
+                        </li>
+                    </ul>
+
+                    <hr class="hidden-md hidden-lg hidden-sm">
+
+                </div>
+                <!-- /.col-md-3 -->
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <h4>Sosyal Medya'da Biz</h4>
+
+                    <p class="social">
+                        <a href="#" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="instagram external" data-animate-hover="shake"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="gplus external" data-animate-hover="shake"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-envelope"></i></a>
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- /.col-md-3 -->
+            <!-- /.row -->
+        </div>
+    </div>
+    <!-- /.container -->
+    <!-- /#footer -->
+    <!-- *** FOOTER END *** -->
+    <!-- *** COPYRIGHT ***
+    _________________________________________________________ -->
+    <div id="copyright">
+        <div class="container">
+            <div class="col-md-6">
+                <p class="pull-left">© @DateTime.Now.Year  Enjoy Game</p>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- *** COPYRIGHT END *** -->
+    <!-- /#all -->
+    <!-- *** SCRIPTS TO INCLUDE ***
+    _________________________________________________________ -->
+    <script src="~/Scripts/jquery-1.11.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/waypoints.min.js"></script>
+    <script src="~/Scripts/modernizr.js"></script>
+    <script src="~/Scripts/bootstrap-hover-dropdown.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/front.js"></script>
+
+
+</body>
+
+</html>

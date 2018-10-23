@@ -1,0 +1,81 @@
+﻿@model Enjoygame.DOMAİN.Core.AdminSession
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Enjoy Game Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--js-->
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/animate.min.css" rel="stylesheet">
+    <script src="~/Scripts/respond.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body class="bg">
+    @using (Ajax.BeginForm("Login", "Home", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "divSonuc" }, new { id = "formgenel" }))
+    {
+        <div class="lightning flashit"> </div>
+        <div class="login-page">
+            <div class="login-main">
+                <div class="login-head">
+                </div>
+                <h3 class="text-center">Admin Giriş</h3>
+                @if (Session !=null)
+                {
+                    Session.SessionID.ToString();
+                }
+                <div class="login-block">
+                    <form>
+                        <input type="text" name="email" placeholder="Email" required="">
+                        <input type="password" name="password" class="lock" placeholder="Şifre">
+                        <div class="forgot-top-grids">
+                            <div class="forgot-grid">
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" id="brand1" value="">
+                                        <label for="brand1"><span></span>Beni Hatırla</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="forgot">
+                                <a href="#">Parolanızı unuttunuz mu?</a>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <input type="submit" name="Giriş" value="Login">
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-6 text-danger" id="divSonuc"></div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <!--inner block end here-->
+    <!--copy rights start here-->
+    <div class="copyrights">
+        <p>@DateTime.Now.Year  Enjoy Game.com  -- Tüm Hakları Gizlidir</p>
+    </div>
+    <!--COPY rights end here-->
+    <!--scrolling js-->
+    <script src="~/Scripts/jquery.nicescroll.js"></script>
+    <script src="~/Scripts/scripts.js"></script>
+    <!--//scrolling js-->
+    <!-- *** SCRIPTS TO INCLUDE ***
+    _________________________________________________________ -->
+    <script src="~/Scripts/jquery-1.11.0.min.js"></script>
+    <script src="~/Scripts/bootstrap-hover-dropdown.js"></script>
+</body>
+</html>
